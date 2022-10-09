@@ -24,7 +24,7 @@ class QueryView extends View {
           <svg class="icon">
             <use href="./resources/img/icons.svg#info"></use>
           </svg>
-          <p class="help-message">Невозможно записать запрос. Пожалуйста, заполните все поля.</p>
+          <p class="help-message">Unable to save the request. Please fill in all fields.</p>
           `;
           setTimeout(function () {
             switch (option) {
@@ -33,7 +33,7 @@ class QueryView extends View {
                 <svg class="icon">
                   <use href="./resources/img/icons.svg#info"></use>
                 </svg>
-                <p class="help-message">Создайте новый запрос. Нажмите кнопку <strong>"Записать"</strong>, чтобы добавить его в список запросов.</p>
+                <p class="help-message">Create a new query. Press the <strong>"Save"</strong> button to add it to the query list.</p>
                 `;
                 break;
               case `edit`:
@@ -41,7 +41,7 @@ class QueryView extends View {
                 <svg class="icon">
                   <use href="./resources/img/icons.svg#info"></use>
                 </svg>
-                <p class="help-message">Отредактируйте запрос. Нажмите кнопку <strong>"Записать"</strong>, чтобы добавить его в список запросов.</p>
+                <p class="help-message">Edit the query. Press the <strong>"Save"</strong> button to add it to the query list.</p>
                 `;
                 break;
             }
@@ -99,16 +99,16 @@ class QueryView extends View {
       case `new`:
         return `
         <div class="main">
-          <div class="section-header">Новый запрос</div>
+          <div class="section-header">New query</div>
           <div class="query-edit">
             <div class="grid">
               <div class="query-field" id="query-field--link">
-                <div class="query-field--name">Ссылка на таблицу</div>
+                <div class="query-field--name">Link to spreadsheet</div>
                 <div class="data-input">
                   <input class="data-input--field" type="url" id="link" ${
                     this._data ? `value="${this._data.link}"` : ``
                   } />
-                  <div class="btn btn-outline" id="link--help" title="Ссылка на таблицу для пользователей портала Р7">
+                  <div class="btn btn-outline" id="link--help" title="Link to the spreadsheet for OnlyOffice portal users">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -116,12 +116,12 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--worksheet">
-                <div class="query-field--name">Имя листа</div>
+                <div class="query-field--name">Worksheet name</div>
                 <div class="data-input">
                   <input class="data-input--field" type="text" id="worksheet" ${
                     this._data ? `value="${this._data.worksheet}"` : ``
                   } />
-                  <div class="btn btn-outline" id="worksheet--help" title="Название листа таблицы, из которого будут импортироваться данные">
+                  <div class="btn btn-outline" id="worksheet--help" title="The name of the worksheet with the data due to import">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -129,7 +129,7 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--target-cell">
-                <div class="query-field--name">Результат в ячейку</div>
+                <div class="query-field--name">Target cell</div>
                 <div class="data-input">
                   <input
                     class="data-input--field"
@@ -137,7 +137,7 @@ class QueryView extends View {
                     id="target-cell"
                     ${this._data ? `value="${this._data.targetCell}"` : ``}
                   />
-                  <div class="btn btn-outline" id="target-cell--help" title="Адрес ячейки, в которую будут импортироваться данные">
+                  <div class="btn btn-outline" id="target-cell--help" title="The adress of the cell to import the data">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -145,7 +145,7 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--start-cell">
-                <div class="query-field--name">Начало диапазона</div>
+                <div class="query-field--name">Start cell</div>
                 <div class="data-input">
                   <input
                     class="data-input--field"
@@ -153,7 +153,7 @@ class QueryView extends View {
                     id="start-cell"
                     ${this._data ? `value="${this._data.startCell}"` : ``}
                   />
-                  <div class="btn btn-outline" id="start-cell--help" title="Адрес ячейки, с которой начинается диапазон импортируемых данных">
+                  <div class="btn btn-outline" id="start-cell--help" title="The adress of the cell with which the range due to import begins">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -161,11 +161,11 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--end-cell">
-                <div class="query-field--name">Конец диапазона</div>
+                <div class="query-field--name">End cell</div>
                 <div class="data-input">
                   <input class="data-input--field" type="text" id="end-cell"
                   ${this._data ? `value="${this._data.endCell}"` : ``} />
-                  <div class="btn btn-outline" id="end-cell--help" title="Адрес ячейки, на которой заканчивается диапазон импортируемых данных">
+                  <div class="btn btn-outline" id="end-cell--help" title="The adress of the cell with which the range due to import ends">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -174,7 +174,7 @@ class QueryView extends View {
               </div>
             </div>
             <div class="query-btns">
-              <a href="" class="btn btn-full" id="save-query">Записать</a>
+              <a href="" class="btn btn-full" id="save-query">Save</a>
             </div>
           </div>
         </div>
@@ -184,26 +184,25 @@ class QueryView extends View {
           </svg>
           <p class="help-message"> ${
             exists
-              ? `Запрос с таким названием уже существует! Введите другое значение в поле <strong>"Результат в ячейку"</strong>.`
-              : `Создайте новый запрос. Нажмите кнопку <strong>"Записать"</strong>, чтобы добавить его в список запросов.`
+              ? `A query with this name already exists! Enter another value in the field <strong>"Target cell"</strong>.`
+              : `Create a new query. Press the <strong>"Save"</strong> button to add it to the query list.`
           }</p>
         </div> 
         `;
         break;
       case `copy`:
-        // TODO: не срабатывает автофокус (т.к. только при загрузке страницы)
         return `
         <div class="main">
-          <div class="section-header">Новый запрос</div>
+          <div class="section-header">New query</div>
           <div class="query-edit">
           <div class="grid">
             <div class="query-field" id="query-field--link">
-              <div class="query-field--name">Ссылка на таблицу</div>
+              <div class="query-field--name">Link to spreadsheet</div>
               <div class="data-input">
                 <input class="data-input--field" type="url" id="link" ${
                   this._data ? `value="${this._data.link}"` : ``
                 } />
-                <div class="btn btn-outline" id="link--help" title="Ссылка на таблицу для пользователей портала Р7">
+                <div class="btn btn-outline" id="link--help" title="Link to the spreadsheet for OnlyOffice portal users">
                   <svg class="icon">
                     <use href="./resources/img/icons.svg#help"></use>
                   </svg>
@@ -211,12 +210,12 @@ class QueryView extends View {
               </div>
             </div>
             <div class="query-field" id="query-field--worksheet">
-              <div class="query-field--name">Имя листа</div>
+              <div class="query-field--name">Worksheet name</div>
               <div class="data-input">
                 <input class="data-input--field" type="text" id="worksheet" ${
                   this._data ? `value="${this._data.worksheet}"` : ``
                 } />
-                <div class="btn btn-outline" id="worksheet--help" title="Название листа таблицы, из которого будут импортироваться данные">
+                <div class="btn btn-outline" id="worksheet--help" title="The name of the worksheet with the data due to import">
                   <svg class="icon">
                     <use href="./resources/img/icons.svg#help"></use>
                   </svg>
@@ -224,7 +223,7 @@ class QueryView extends View {
               </div>
             </div>
             <div class="query-field" id="query-field--target-cell">
-              <div class="query-field--name">Результат в ячейку</div>
+              <div class="query-field--name">Target cell</div>
               <div class="data-input">
                 <input
                   class="data-input--field"
@@ -232,7 +231,7 @@ class QueryView extends View {
                   id="target-cell"
                   autofocus
                 />
-                <div class="btn btn-outline" id="target-cell--help" title="Адрес ячейки, в которую будут импортироваться данные">
+                <div class="btn btn-outline" id="target-cell--help" title="The adress of the cell to import the data">
                   <svg class="icon">
                     <use href="./resources/img/icons.svg#help"></use>
                   </svg>
@@ -240,7 +239,7 @@ class QueryView extends View {
               </div>
             </div>
             <div class="query-field" id="query-field--start-cell">
-              <div class="query-field--name">Начало диапазона</div>
+              <div class="query-field--name">Start cell</div>
               <div class="data-input">
                 <input
                   class="data-input--field"
@@ -248,7 +247,7 @@ class QueryView extends View {
                   id="start-cell"
                   ${this._data ? `value="${this._data.startCell}"` : ``}
                 />
-                <div class="btn btn-outline" id="start-cell--help" title="Адрес ячейки, с которой начинается диапазон импортируемых данных">
+                <div class="btn btn-outline" id="start-cell--help" title="The adress of the cell with which the range due to import begins">
                   <svg class="icon">
                     <use href="./resources/img/icons.svg#help"></use>
                   </svg>
@@ -256,11 +255,11 @@ class QueryView extends View {
               </div>
             </div>
             <div class="query-field" id="query-field--end-cell">
-              <div class="query-field--name">Конец диапазона</div>
+              <div class="query-field--name">End cell</div>
               <div class="data-input">
                 <input class="data-input--field" type="text" id="end-cell"
                 ${this._data ? `value="${this._data.endCell}"` : ``} />
-                <div class="btn btn-outline" id="end-cell--help" title="Адрес ячейки, на которой заканчивается диапазон импортируемых данных">
+                <div class="btn btn-outline" id="end-cell--help" title="The adress of the cell with which the range due to import ends">
                   <svg class="icon">
                     <use href="./resources/img/icons.svg#help"></use>
                   </svg>
@@ -269,7 +268,7 @@ class QueryView extends View {
             </div>
           </div>
           <div class="query-btns">
-            <a href="" class="btn btn-full" id="save-query">Записать</a>
+            <a href="" class="btn btn-full" id="save-query">Save</a>
           </div>
         </div>
         </div>
@@ -279,8 +278,8 @@ class QueryView extends View {
           </svg>
           <p class="help-message"> ${
             exists
-              ? `Запрос с таким названием уже существует! Введите другое значение в поле <strong>"Результат в ячейку"</strong>.`
-              : `Отредактируйте запрос. Нажмите кнопку <strong>"Записать"</strong>, чтобы добавить его в список запросов.`
+              ? `A query with this name already exists! Enter another value in the field <strong>"Target cell"</strong>.`
+              : `Create a new query. Press the <strong>"Save"</strong> button to add it to the query list.`
           }</p>
         </div> 
         `;
@@ -288,16 +287,16 @@ class QueryView extends View {
       case `edit`:
         return `
         <div class="main">
-          <div class="section-header">Запрос ${this._data.targetCell}</div>
+          <div class="section-header">Query ${this._data.targetCell}</div>
           <div class="query-edit">
             <div class="grid">
               <div class="query-field" id="query-field--link">
-                <div class="query-field--name">Ссылка на таблицу</div>
+                <div class="query-field--name">Link to spreadsheet</div>
                 <div class="data-input">
                   <input class="data-input--field" type="url" id="link" ${
                     this._data ? `value="${this._data.link}"` : ``
                   } />
-                  <div class="btn btn-outline" id="link--help" title="Ссылка на таблицу для пользователей портала Р7">
+                  <div class="btn btn-outline" id="link--help" title="Link to the spreadsheet for OnlyOffice portal users">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -305,12 +304,12 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--worksheet">
-                <div class="query-field--name">Имя листа</div>
+                <div class="query-field--name">Worksheet name</div>
                 <div class="data-input">
                   <input class="data-input--field" type="text" id="worksheet" ${
                     this._data ? `value="${this._data.worksheet}"` : ``
                   } />
-                  <div class="btn btn-outline" id="worksheet--help" title="Название листа таблицы, из которого будут импортироваться данные">
+                  <div class="btn btn-outline" id="worksheet--help" title="The name of the worksheet with the data due to import">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -318,7 +317,7 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--target-cell">
-                <div class="query-field--name">Результат в ячейку</div>
+                <div class="query-field--name">Target cell</div>
                 <div class="data-input">
                   <input
                     class="data-input--field"
@@ -326,7 +325,7 @@ class QueryView extends View {
                     id="target-cell"
                     ${this._data ? `value="${this._data.targetCell}"` : ``}
                   />
-                  <div class="btn btn-outline" id="target-cell--help" title="Адрес ячейки, в которую будут импортироваться данные">
+                  <div class="btn btn-outline" id="target-cell--help" title="The adress of the cell to import the data">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -334,7 +333,7 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--start-cell">
-                <div class="query-field--name">Начало диапазона</div>
+                <div class="query-field--name">Start cell</div>
                 <div class="data-input">
                   <input
                     class="data-input--field"
@@ -342,7 +341,7 @@ class QueryView extends View {
                     id="start-cell"
                     ${this._data ? `value="${this._data.startCell}"` : ``}
                   />
-                  <div class="btn btn-outline" id="start-cell--help" title="Адрес ячейки, с которой начинается диапазон импортируемых данных">
+                  <div class="btn btn-outline" id="start-cell--help" title="The adress of the cell with which the range due to import begins">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -350,11 +349,11 @@ class QueryView extends View {
                 </div>
               </div>
               <div class="query-field" id="query-field--end-cell">
-                <div class="query-field--name">Конец диапазона</div>
+                <div class="query-field--name">End cell</div>
                 <div class="data-input">
                   <input class="data-input--field" type="text" id="end-cell"
                   ${this._data ? `value="${this._data.endCell}"` : ``} />
-                  <div class="btn btn-outline" id="end-cell--help" title="Адрес ячейки, на которой заканчивается диапазон импортируемых данных">
+                  <div class="btn btn-outline" id="end-cell--help" title="The adress of the cell with which the range due to import ends">
                     <svg class="icon">
                       <use href="./resources/img/icons.svg#help"></use>
                     </svg>
@@ -363,9 +362,9 @@ class QueryView extends View {
               </div>
             </div>
             <div class="query-btns">
-              <a href="" class="btn btn-full" id="save-query">Записать</a>
-              <a href="" class="btn btn-full" id="copy-query">Копировать</a>
-              <a href="" class="btn btn-full" id="delete-query">Удалить</a>
+              <a href="" class="btn btn-full" id="save-query">Save</a>
+              <a href="" class="btn btn-full" id="copy-query">Copy</a>
+              <a href="" class="btn btn-full" id="delete-query">Delete</a>
             </div>
           </div>
         </div>
@@ -373,7 +372,7 @@ class QueryView extends View {
           <svg class="icon">
             <use href="./resources/img/icons.svg#info"></use>
           </svg>
-          <p class="help-message">Отредактируйте запрос. Нажмите кнопку <strong>"Записать"</strong>, чтобы добавить его в список запросов.</p>
+          <p class="help-message">Edit the query. Press the <strong>"Save"</strong> button to add it to the query list.</p>
         </div> 
         `;
         break;
@@ -382,7 +381,7 @@ class QueryView extends View {
         <div class="main">
           <div class="section-header">&nbsp;</div>
           <div class="message">
-            <p>Запрос <strong>"${this._data.targetCell}"</strong> успешно создан и добавлен в список запросов.</p>
+            <p>The query <strong>"${this._data.targetCell}"</strong> was successfully created and added to the query list.</p>
           </div>
         </div>
         `;
@@ -392,7 +391,7 @@ class QueryView extends View {
         <div class="main">
           <div class="section-header">&nbsp;</div>
           <div class="message">
-            <p>Запрос <strong>"${this._data.targetCell}"</strong> успешно удален.</p>
+            <p>The query <strong>"${this._data.targetCell}"</strong> was successfully deleted.</p>
           </div>
         </div>
         `;
@@ -402,8 +401,8 @@ class QueryView extends View {
         <div class="main">
           <div class="section-header">&nbsp;</div>
           <div class="message">
-            <p>Для этой таблицы еще не было создано ни одного запроса.</p>
-            <p>Нажмите кнопку <strong>"Создать"</strong>, чтобы добавить новый запрос.</p>
+            <p>There were no queries created for this spreadsheet.</p>
+            <p>Push the <strong>"Create"</strong> button to add a new query.</p>
           </div>
         </div>
         `;
@@ -413,9 +412,9 @@ class QueryView extends View {
         <div class="main">
           <div class="section-header">&nbsp;</div>
           <div class="message">
-            <p>Нажмите кнопку <strong>"Выполнить"</strong>, чтобы выполнить созданные запросы.</p>
-            <p>Выберите запрос из списка, чтобы отредактировать его.</p>
-            <p>Нажмите кнопку <strong>"Создать"</strong>, чтобы добавить новый запрос.</p>
+            <p>Press the <strong>"Execute"</strong> button to execute the queries.</p>
+            <p>Choose the query to edit from the list.</p>
+            <p>Press the <strong>"Create"</strong> button to a new query.</p>
           </div>
         </div>
         `;

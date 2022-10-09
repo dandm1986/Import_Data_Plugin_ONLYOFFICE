@@ -74,7 +74,7 @@ class Model {
       this._checkToken(function (token) {
         $.ajax({
           method: 'POST',
-          url: `http://127.0.0.1:3000/api/v1/methods/import-range`,
+          url: `https://import-data-onlyoffice.herokuapp.com/api/v1/methods/import-range`,
           contentType: 'application/json',
           data: JSON.stringify({
             token,

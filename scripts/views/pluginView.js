@@ -40,7 +40,7 @@ class PluginView extends View {
     return `
     <div class="queries-list-section">
       <div class="main">
-        <div class="section-header">Запросы</div>
+        <div class="section-header">Queries</div>
         <div class="section-menu">
           <a href="" class="btn btn-full" id="new-query">Создать</a>
           <div class="data-input">
@@ -48,7 +48,7 @@ class PluginView extends View {
               class="data-input--field"
               type="text"
               id="search-query"
-              placeholder="Поиск..."
+              placeholder="Search..."
             />
             <a href="" class="btn btn-full" id="resfresh-queries-list">
               <svg class="icon">
@@ -59,7 +59,7 @@ class PluginView extends View {
         </div>
         <div class="queries-list"></div>
       </div>
-      <a href="" class="btn btn-full" id="execute-queries">Выполнить</a>
+      <a href="" class="btn btn-full" id="execute-queries">Execute</a>
     </div>
     <div class="query-edit-section"></div>
     `;
