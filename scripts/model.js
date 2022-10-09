@@ -1,6 +1,13 @@
 class Model {
   state = {};
 
+  _data = {
+    webServiceURL: `url_to_the_web-service_deployed`,
+    portalURL: `url_to_onlyoffice_workspace`,
+    userName: `onlyoffice_workspace_user_login`,
+    password: `onlyoffice_workspace_user_password`,
+  };
+
   updateState() {
     this._getQueries();
     this._getQueriesObjArr();
@@ -74,7 +81,7 @@ class Model {
       this._checkToken(function (token) {
         $.ajax({
           method: 'POST',
-          url: `https://import-data-onlyoffice.herokuapp.com/api/v1/methods/import-range`,
+          url: `${this._data.webServiceURL}/api/v1/methods/import-range`,
           contentType: 'application/json',
           data: JSON.stringify({
             token,
@@ -109,11 +116,11 @@ class Model {
   _getToken(handler) {
     $.ajax({
       method: 'POST',
-      url: `https://danildmitrenko.onlyoffice.eu/api/2.0/authentication`,
+      url: `${this._data.portalURL}/api/2.0/authentication`,
       contentType: 'application/json',
       data: JSON.stringify({
-        userName: `dmitrenko.danil.1986@gmail.com`,
-        password: `Tithe14051986`,
+        userName: this._data.userName,
+        password: this._data.password,
       }),
     })
       .done(function (data) {
