@@ -42,13 +42,13 @@ class PluginView extends View {
       <div class="main">
         <div class="section-header">Queries</div>
         <div class="section-menu">
-          <a href="" class="btn btn-full" id="new-query">Создать</a>
+          <a href="" class="btn btn-full" id="new-query">Create</a>
           <div class="data-input">
             <input
               class="data-input--field"
               type="text"
               id="search-query"
-              placeholder="Search..."
+              placeholder="..."
             />
             <a href="" class="btn btn-full" id="resfresh-queries-list">
               <svg class="icon">
