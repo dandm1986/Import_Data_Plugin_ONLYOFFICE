@@ -42,7 +42,7 @@ _data = {
 
 - Open the plugin within the spreadheet editor.
 - You can create and edit as many queries as you need.
-- The queries are saved in the local storage so once you set all the necessary queries you can then easily request data from the external spreadsheets just by pushing the `Execute` plugin button. The plugin would make all the necessay request to the server and update the imported data within the target cells.
+- The queries are saved in the local storage so once you set all the necessary queries you can then easily request data from the external spreadsheets just by pushing the `Execute` plugin button. The plugin would make all the necessary requests to the server and update the imported data within the target cells.
 
 ## Creating a new query
 
