@@ -1,0 +1,280 @@
+/**************************/
+/* GLOBAL SETTINGS */
+/**************************/
+
+:root {
+  --color-primary: #2f2e41;
+  --color-secondary: #5d563d;
+  --color-accent: #bcb28e;
+  --color-gray: #212529;
+  --color-primary-tint-1: #444354;
+  --color-primary-tint-2: #6d6d7a;
+  --color-primary-tint-3: #82828d;
+  --color-primary-tint-4: #c1c0c6;
+  --color-primary-tint-5: #eaeaec;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-overlay: rgba(47, 46, 65, 0.5);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--color-gray);
+
+  background-color: darkslategray;
+}
+
+*:focus {
+  outline: none;
+}
+
+/**************************/
+/* REUSABLE COMPONENTS */
+/**************************/
+
+.plugin {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--color-primary-tint-5);
+  width: 600px;
+  height: 400px;
+
+  display: flex;
+}
+
+.section-header {
+  font-size: 1.8rem;
+  text-align: center;
+
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* BUTTONS */
+
+.btn {
+  cursor: pointer;
+
+  display: inline-block;
+
+  transition: all 0.3s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  text-align: center;
+
+  text-decoration: none;
+  border-radius: 0.5rem;
+
+  color: var(--color-primary-tint-5);
+  background-color: var(--color-primary);
+}
+
+.btn-full:hover,
+.btn-full:active {
+  color: var(--color-accent);
+}
+
+.btn-outline:link,
+.btn-outline:visited {
+  color: var(--color-primary-tint-1);
+}
+
+.btn-outline:hover,
+.btn-outline:active {
+  color: var(--color-accent);
+}
+
+/* DATA INPUT */
+
+.data-input {
+  display: flex;
+  align-items: center;
+}
+
+.data-input--field {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 0.5rem;
+
+  width: 100%;
+  margin-right: 0.8rem;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/**************************/
+/* QUERIES LIST */
+/**************************/
+
+.queries-list-section {
+  padding: 2.4rem 1.2rem;
+  height: inherit;
+  width: 12rem;
+
+  background-color: var(--color-primary-tint-4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.queries-list-section .main {
+  height: 85%;
+}
+
+.section-menu {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1.6rem;
+}
+
+.queries-list {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  overflow-y: scroll;
+}
+
+.queries-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* BUTTONS */
+
+.section-menu .btn-full,
+.queries-list .btn-full {
+  margin-bottom: 0.8rem;
+}
+
+/* DATA INPUT */
+
+.section-menu .data-input--field {
+  width: 100%;
+  padding: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+.btn#resfresh-queries-list {
+  padding: 0.6rem;
+  margin: 0;
+}
+
+.btn#resfresh-queries-list .icon {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+/**************************/
+/* QUERY EDIT */
+/**************************/
+
+.query-edit-section {
+  padding: 2.4rem 1.2rem;
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--color-white);
+
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  /* row-gap: 2.4rem; */
+}
+.query-edit-section .main {
+  height: 30rem;
+  width: 80%;
+  justify-self: center;
+}
+
+.query-edit {
+  width: 100%;
+  padding: 1.2rem 2.4rem;
+  background-color: var(--color-primary-tint-4);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.2rem;
+  row-gap: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.query-field--name {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-primary);
+}
+
+#query-field--link {
+  grid-row: 1;
+  grid-column: 1 / -1;
+}
+
+.query-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.help {
+  width: 80%;
+  height: 5.2rem;
+  border-top: 2px solid var(--color-primary);
+  padding-top: 0.8rem;
+  justify-self: center;
+
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+
+.help-message {
+  font-size: 1.2rem;
+  overflow-y: scroll;
+}
+
+.help-message::-webkit-scrollbar {
+  display: none;
+}
+
+.message {
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+}
+
+.message p {
+  margin-bottom: 1.2rem;
+}
